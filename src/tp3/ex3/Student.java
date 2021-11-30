@@ -12,6 +12,11 @@ public class Student extends Thread{
     public void run() {
         System.out.println("Student "+this.getName()+" is waiting for a sandwich");
         //todo : wait for a sandwich until it's prepared
+        try {
+            synchronized (isiSandwich) {
+                isiSandwich.wait();
+            }}
+        catch(InterruptedException e) {}
         System.out.println("Student "+this.getName()+" got a sandwich");
     }
 }

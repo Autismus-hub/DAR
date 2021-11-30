@@ -4,7 +4,9 @@ public class StaticCounter {
     private static int counter = 0;
 
     // todo : implement me
-    public static void increment(){
+    public synchronized static void increment(){
         //increment counter and print it
+        counter++;
+        System.out.println(counter);
     }
 }
